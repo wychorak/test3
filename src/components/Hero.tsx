@@ -78,7 +78,7 @@ export function Hero() {
             className="font-display font-black leading-[0.88] tracking-tighter text-white"
             style={{ fontSize: 'clamp(3.8rem, 13vw, 10rem)' }}
           >
-            NOWY
+            PRIZM
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-8">
@@ -95,7 +95,7 @@ export function Hero() {
               backgroundClip: 'text',
             }}
           >
-            WYMIAR.
+            NAUKA JAZDY.
           </motion.h1>
         </div>
 
