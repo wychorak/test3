@@ -45,7 +45,7 @@ export function Theory() {
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}

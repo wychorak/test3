@@ -6,50 +6,49 @@ const features = [
     num: '01',
     icon: Zap,
     title: 'Intensywne Kursy',
-    description: 'Zdobądź prawo jazdy w rekordowym czasie. Skondensowana wiedza i maksymalna praktyka bez zbędnego czekania.',
+    description: 'Zdobądź prawo jazdy w rekordowym czasie. Skondensowana wiedza i maksymalna praktyka.',
     tag: 'Czas to wszystko',
   },
   {
     num: '02',
     icon: Car,
-    title: 'Profesjonalne Symulatory',
-    description: 'Poczuj drogę zanim na nią wyjedziesz. Najnowocześniejszy sprzęt VR w Warszawie — trening bez ryzyka.',
+    title: 'Symulatory VR',
+    description: 'Poczuj drogę zanim na nią wyjedziesz. Najnowocześniejszy sprzęt VR w Warszawie.',
     tag: 'Technologia VR',
   },
   {
     num: '03',
     icon: ShieldCheck,
     title: 'Egzaminy na Miejscu',
-    description: 'Zdawaj tam, gdzie się uczysz. Zero stresu, pełna kontrola. Komisja egzaminacyjna przyjeżdża do nas.',
+    description: 'Zdawaj tam, gdzie się uczysz. Zero stresu, komisja przyjeżdża do nas.',
     tag: 'Pełny komfort',
   },
   {
     num: '04',
     icon: Trophy,
     title: 'Pakiety VIP',
-    description: 'Indywidualne podejście, elastyczne godziny i luksusowe auta szkoleniowe. Nauka na najwyższym poziomie.',
+    description: 'Indywidualne podejście, elastyczne godziny i luksusowe auta szkoleniowe.',
     tag: 'Premium',
   },
 ];
 
 export function WhyPrizm() {
   return (
-    <section id="why" className="py-16 md:py-24 relative bg-[#020B14] overflow-hidden">
-      {/* Ambient glow */}
+    <section id="why" className="py-14 md:py-20 relative bg-[#020B14] overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(168,85,247,0.06) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(34,211,238,0.05) 0%, transparent 70%)' }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
         {/* Header */}
-        <div className="mb-12 md:mb-16">
+        <div className="mb-10 md:mb-14">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-3 mb-5"
+            className="flex items-center gap-3 mb-4"
           >
             <div className="w-6 h-[1px] bg-[#22D3EE]" />
             <span className="text-[#22D3EE] text-xs font-mono tracking-[0.25em] uppercase">Nasza Przewaga</span>
@@ -59,7 +58,7 @@ export function WhyPrizm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white"
           >
             Dlaczego PRIZM.
           </motion.h2>
@@ -74,57 +73,49 @@ export function WhyPrizm() {
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.7, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] }}
                 className="group relative"
               >
-                {/* Hover background */}
-                <div className="absolute inset-0 rounded-2xl bg-[#22D3EE]/0 group-hover:bg-[#22D3EE]/4 transition-colors duration-500 pointer-events-none" />
-
-                {/* Separator line */}
+                <div className="absolute inset-0 rounded-xl bg-[#22D3EE]/0 group-hover:bg-[#22D3EE]/3 transition-colors duration-500 pointer-events-none" />
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/5" />
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] rounded-full bg-[#22D3EE] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500" />
 
-                <div className="grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_200px] gap-4 md:gap-8 items-center py-7 md:py-9 px-3 md:px-6">
-                  {/* Number */}
-                  <div className="flex items-center">
-                    <span className="font-mono text-4xl md:text-5xl font-bold text-white/8 group-hover:text-[#22D3EE]/20 transition-colors duration-500 select-none tabular-nums leading-none">
-                      {feature.num}
-                    </span>
-                  </div>
+                <div className="flex items-start gap-4 sm:gap-6 py-5 sm:py-7 md:py-8 px-3 sm:px-5">
+                  {/* Big number — sm+ only */}
+                  <span className="hidden sm:block font-mono text-3xl md:text-5xl font-bold text-white/8 group-hover:text-[#22D3EE]/20 transition-colors duration-500 select-none leading-none w-12 md:w-16 shrink-0 pt-1">
+                    {feature.num}
+                  </span>
 
-                  {/* Title + description */}
-                  <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
-                    <div className="flex items-center gap-4 min-w-[220px]">
-                      <div className="w-10 h-10 rounded-xl bg-[#22D3EE]/10 border border-[#22D3EE]/20 flex items-center justify-center shrink-0 group-hover:bg-[#22D3EE]/20 group-hover:border-[#22D3EE]/40 transition-all duration-500">
-                        <Icon className="w-5 h-5 text-[#22D3EE]" />
+                  <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 md:gap-10">
+                    {/* Icon + title */}
+                    <div className="flex items-center gap-3 sm:w-48 md:w-56 shrink-0">
+                      {/* Tiny number on mobile */}
+                      <span className="sm:hidden font-mono text-base font-bold text-white/20 select-none shrink-0">
+                        {feature.num}
+                      </span>
+                      <div className="w-9 h-9 rounded-xl bg-[#22D3EE]/10 border border-[#22D3EE]/20 flex items-center justify-center shrink-0 group-hover:bg-[#22D3EE]/20 group-hover:border-[#22D3EE]/40 transition-all duration-500">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#22D3EE]" />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight">
+                      <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white tracking-tight leading-tight">
                         {feature.title}
                       </h3>
                     </div>
-                    <p className="text-[#6B8CA4] text-sm md:text-base leading-relaxed max-w-xl group-hover:text-[#aaaaaa] transition-colors duration-500">
+
+                    {/* Description */}
+                    <p className="text-[#6B8CA4] text-sm md:text-base leading-relaxed group-hover:text-[#9BB8C8] transition-colors duration-500 flex-1">
                       {feature.description}
                     </p>
-                  </div>
 
-                  {/* Tag */}
-                  <div className="hidden md:flex justify-end">
-                    <motion.span
-                      className="px-3 py-1 rounded-full border border-white/10 text-white/30 text-xs font-mono tracking-wide group-hover:border-[#22D3EE]/30 group-hover:text-[#22D3EE]/70 transition-all duration-500"
-                    >
+                    {/* Tag — large desktop only */}
+                    <span className="hidden xl:inline-flex px-3 py-1 rounded-full border border-white/10 text-white/30 text-xs font-mono tracking-wide group-hover:border-[#22D3EE]/30 group-hover:text-[#22D3EE]/70 transition-all duration-500 shrink-0">
                       {feature.tag}
-                    </motion.span>
+                    </span>
                   </div>
                 </div>
-
-                {/* Animated left border on hover */}
-                <motion.div
-                  className="absolute left-0 top-0 bottom-0 w-[2px] rounded-full bg-[#22D3EE] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"
-                />
               </motion.div>
             );
           })}
-          {/* Bottom separator */}
           <div className="h-[1px] bg-white/5" />
         </div>
       </div>

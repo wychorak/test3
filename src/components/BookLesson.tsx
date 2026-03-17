@@ -28,14 +28,14 @@ export function BookLesson() {
 
   return (
     <section id="book" className="py-14 md:py-20 relative bg-[#020B14]">
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-5 sm:px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-3 md:mb-5"
           >
             Zarezerwuj jazdę.
           </motion.h2>

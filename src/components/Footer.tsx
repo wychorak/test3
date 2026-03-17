@@ -6,9 +6,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#020B14] pt-20 pb-10 overflow-hidden border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <footer className="relative bg-[#020B14] pt-12 sm:pt-16 md:pt-20 pb-8 overflow-hidden border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 md:mb-16">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <a href="#" className="inline-block mb-6">

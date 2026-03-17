@@ -78,12 +78,12 @@ export function Navbar() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        scrolled ? 'py-2' : 'py-6'
+        scrolled ? 'py-2' : 'py-4 sm:py-6'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className={cn(
-          'flex items-center justify-between rounded-full px-6 py-3 transition-all duration-500',
+          'flex items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 transition-all duration-500',
           scrolled ? 'glass-panel' : 'bg-transparent'
         )}>
           {/* Logo */}

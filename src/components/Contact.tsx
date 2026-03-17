@@ -18,14 +18,14 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-14 md:py-20 relative bg-[#020B14]">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
         <div className="text-center mb-10 md:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6"
+            className="text-3xl sm:text-4xl md:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6"
           >
             Bądźmy w kontakcie.
           </motion.h2>
@@ -137,7 +137,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 md:py-4 rounded-full font-semibold bg-white text-black hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 mt-4 text-sm md:text-base"
+                className="w-full py-3.5 md:py-4 rounded-full font-semibold bg-[#22D3EE] text-[#020B14] hover:bg-[#67E8F9] transition-colors flex items-center justify-center gap-2 disabled:opacity-70 mt-4 text-sm md:text-base"
               >
                 {isSubmitting ? (
                   <span className="animate-pulse">Wysyłanie...</span>

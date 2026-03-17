@@ -54,7 +54,7 @@ export function Hero() {
       ))}
 
       {/* ── MAIN content — centred ── */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 sm:px-8 pt-24 pb-6">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 sm:px-8 md:px-12 pt-20 sm:pt-24 pb-4">
 
         {/* Badge */}
         <motion.div
@@ -63,9 +63,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mb-8 flex items-center gap-3"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#22D3EE]/20 bg-[#22D3EE]/5 text-[#22D3EE] font-mono text-[11px] tracking-[0.25em] uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#22D3EE] animate-pulse" />
-            Szkoła Jazdy · Warszawa · Est. 2016
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#22D3EE]/20 bg-[#22D3EE]/5 text-[#22D3EE] font-mono text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.25em] uppercase max-w-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#22D3EE] animate-pulse shrink-0" />
+            <span className="truncate">Szkoła Jazdy · Warszawa · Est. 2016</span>
           </span>
         </motion.div>
 

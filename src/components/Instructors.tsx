@@ -26,14 +26,14 @@ const instructors = [
 export function Instructors() {
   return (
     <section id="instructors" className="py-14 md:py-20 relative bg-[#020B14]">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
         <div className="text-center mb-10 md:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-3 md:mb-5"
           >
             Poznaj zespół.
           </motion.h2>
@@ -48,7 +48,7 @@ export function Instructors() {
           </motion.p>
         </div>
 
-        <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 pb-8 md:pb-0 snap-x snap-mandatory hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 pb-4 sm:pb-0 snap-x snap-mandatory -mx-5 px-5 sm:mx-0 sm:px-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {instructors.map((instructor, index) => (
             <motion.div
               key={index}
@@ -56,7 +56,7 @@ export function Instructors() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="relative w-[280px] sm:w-full aspect-[3/4] rounded-3xl overflow-hidden group cursor-pointer snap-center flex-shrink-0"
+              className="relative w-[72vw] max-w-[280px] sm:w-full aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden group cursor-pointer snap-center flex-shrink-0"
             >
               <img 
                 src={instructor.image}
