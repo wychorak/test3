@@ -104,14 +104,14 @@ export function Navbar() {
                   "text-sm font-medium transition-all duration-300 relative py-1",
                   activeSection === link.href 
                     ? "text-white" 
-                    : "text-[#86868b] hover:text-white"
+                    : "text-[#6B8CA4] hover:text-white"
                 )}
               >
                 {link.name}
                 {activeSection === link.href && (
                   <motion.div 
                     layoutId="activeNav"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#a855f7] rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#22D3EE] rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -123,7 +123,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <button 
               onClick={toggleLang}
-              className="flex items-center gap-1 text-sm font-medium text-[#86868b] hover:text-white transition-colors"
+              className="flex items-center gap-1 text-sm font-medium text-[#6B8CA4] hover:text-white transition-colors"
             >
               <Globe className="w-4 h-4" />
               {lang}
@@ -134,8 +134,8 @@ export function Navbar() {
               className={cn(
                 "inline-flex items-center justify-center px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300",
                 activeSection === '#book'
-                  ? "bg-[#a855f7] text-white"
-                  : "bg-white text-black hover:bg-gray-200"
+                  ? "bg-[#22D3EE] text-white"
+                  : "bg-[#22D3EE] text-[#020B14] hover:bg-[#67E8F9]"
               )}
             >
               Zapisz się
@@ -166,7 +166,7 @@ export function Navbar() {
               onClick={(e) => handleScrollTo(e, link.href)}
               className={cn(
                 "text-lg font-medium transition-colors",
-                activeSection === link.href ? "text-[#a855f7]" : "text-[#86868b] hover:text-white"
+                activeSection === link.href ? "text-[#22D3EE]" : "text-[#6B8CA4] hover:text-white"
               )}
             >
               {link.name}
@@ -186,7 +186,7 @@ export function Navbar() {
             onClick={(e) => handleScrollTo(e, '#book')}
             className={cn(
               "mt-4 inline-flex items-center justify-center px-6 py-3 font-semibold rounded-xl transition-colors",
-              activeSection === '#book' ? "bg-[#a855f7] text-white" : "bg-white text-black hover:bg-gray-200"
+              activeSection === '#book' ? "bg-[#22D3EE] text-[#020B14]" : "bg-[#22D3EE] text-[#020B14] hover:bg-[#67E8F9]"
             )}
           >
             Zapisz się

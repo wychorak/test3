@@ -9,7 +9,7 @@ interface SpotlightCardProps {
 export const SpotlightCard = ({
   children,
   className = "",
-  spotlightColor = "rgba(168, 85, 247, 0.15)", // Default to our purple
+  spotlightColor = "rgba(34, 211, 238, 0.12)", // Default to our purple
 }: SpotlightCardProps) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -49,7 +49,7 @@ export const SpotlightCard = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-[2rem] border border-white/5 bg-[#1d1d1f] ${className}`}
+      className={`relative overflow-hidden rounded-[2rem] border border-white/5 bg-[#061220] ${className}`}
     >
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"

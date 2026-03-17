@@ -27,7 +27,7 @@ export function BookLesson() {
   };
 
   return (
-    <section id="book" className="py-20 md:py-32 relative bg-black">
+    <section id="book" className="py-14 md:py-20 relative bg-[#020B14]">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
@@ -44,7 +44,7 @@ export function BookLesson() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-[#86868b] max-w-2xl mx-auto tracking-tight"
+            className="text-lg md:text-xl text-[#6B8CA4] max-w-2xl mx-auto tracking-tight"
           >
             Wybierz termin, który Ci odpowiada.
           </motion.p>
@@ -61,9 +61,9 @@ export function BookLesson() {
             <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">Wybierz Datę</h3>
             <div className="flex gap-4 md:gap-6 text-xs md:text-sm font-medium">
               <span className="flex items-center gap-2 text-[#f5f5f7]">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#a855f7] shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div> Dostępne
+                <div className="w-2.5 h-2.5 rounded-full bg-[#22D3EE] shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div> Dostępne
               </span>
-              <span className="flex items-center gap-2 text-[#86868b]">
+              <span className="flex items-center gap-2 text-[#6B8CA4]">
                 <div className="w-2.5 h-2.5 rounded-full bg-white/10"></div> Zajęte
               </span>
             </div>
@@ -86,17 +86,17 @@ export function BookLesson() {
                     isBooked 
                       ? 'bg-white/5 border border-white/5 opacity-10 cursor-not-allowed grayscale' 
                       : isSelected 
-                        ? 'bg-[#a855f7] text-white shadow-[0_0_30px_rgba(168,85,247,0.4)] scale-105 z-10' 
-                        : 'bg-white/5 hover:bg-[#a855f7]/10 border border-white/10 hover:border-[#a855f7]/50'
+                        ? 'bg-[#22D3EE] text-white shadow-[0_0_30px_rgba(168,85,247,0.4)] scale-105 z-10' 
+                        : 'bg-white/5 hover:bg-[#22D3EE]/10 border border-white/10 hover:border-[#22D3EE]/50'
                   }`}
                 >
-                  <span className={`text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-1 md:mb-2 ${isSelected ? 'text-white/90' : 'text-[#a855f7]'}`}>
+                  <span className={`text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-1 md:mb-2 ${isSelected ? 'text-white/90' : 'text-[#22D3EE]'}`}>
                     {format(date, 'EEE', { locale: pl })}
                   </span>
                   <span className={`text-xl md:text-3xl font-bold tracking-tight ${isSelected ? 'text-white' : 'text-[#f5f5f7]'}`}>
                     {format(date, 'd')}
                   </span>
-                  <span className={`text-[10px] md:text-xs mt-1 font-medium ${isSelected ? 'text-white/80' : 'text-[#86868b]'}`}>
+                  <span className={`text-[10px] md:text-xs mt-1 font-medium ${isSelected ? 'text-white/80' : 'text-[#6B8CA4]'}`}>
                     {format(date, 'MMM', { locale: pl })}
                   </span>
                 </button>

@@ -1,92 +1,131 @@
 import { motion } from 'framer-motion';
-import { Car, Zap, ShieldCheck, Trophy } from 'lucide-react';
-import { SpotlightCard } from './reactbits/SpotlightCard';
+import { Zap, Car, ShieldCheck, Trophy } from 'lucide-react';
 
 const features = [
   {
-    icon: <Zap className="w-8 h-8 text-[#a855f7]" />,
+    num: '01',
+    icon: Zap,
     title: 'Intensywne Kursy',
-    description: 'Zdobądź prawo jazdy w rekordowym czasie. Skondensowana wiedza i maksymalna praktyka.',
-    span: 'md:col-span-2 lg:col-span-2',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop'
+    description: 'Zdobądź prawo jazdy w rekordowym czasie. Skondensowana wiedza i maksymalna praktyka bez zbędnego czekania.',
+    tag: 'Czas to wszystko',
   },
   {
-    icon: <Car className="w-8 h-8 text-[#a855f7]" />,
+    num: '02',
+    icon: Car,
     title: 'Profesjonalne Symulatory',
-    description: 'Poczuj drogę zanim na nią wyjedziesz. Najnowocześniejszy sprzęt VR w Warszawie.',
-    span: 'md:col-span-1 lg:col-span-1',
-    image: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=800&auto=format&fit=crop'
+    description: 'Poczuj drogę zanim na nią wyjedziesz. Najnowocześniejszy sprzęt VR w Warszawie — trening bez ryzyka.',
+    tag: 'Technologia VR',
   },
   {
-    icon: <ShieldCheck className="w-8 h-8 text-[#a855f7]" />,
+    num: '03',
+    icon: ShieldCheck,
     title: 'Egzaminy na Miejscu',
-    description: 'Zdawaj tam, gdzie się uczysz. Zero stresu, pełna kontrola nad sytuacją.',
-    span: 'md:col-span-1 lg:col-span-1',
-    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=800&auto=format&fit=crop'
+    description: 'Zdawaj tam, gdzie się uczysz. Zero stresu, pełna kontrola. Komisja egzaminacyjna przyjeżdża do nas.',
+    tag: 'Pełny komfort',
   },
   {
-    icon: <Trophy className="w-8 h-8 text-[#a855f7]" />,
+    num: '04',
+    icon: Trophy,
     title: 'Pakiety VIP',
-    description: 'Indywidualne podejście, elastyczne godziny i luksusowe auta szkoleniowe.',
-    span: 'md:col-span-2 lg:col-span-2',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop'
+    description: 'Indywidualne podejście, elastyczne godziny i luksusowe auta szkoleniowe. Nauka na najwyższym poziomie.',
+    tag: 'Premium',
   },
 ];
 
 export function WhyPrizm() {
   return (
-    <section id="why" className="py-20 md:py-32 relative bg-black overflow-hidden">
+    <section id="why" className="py-16 md:py-24 relative bg-[#020B14] overflow-hidden">
+      {/* Ambient glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(168,85,247,0.06) 0%, transparent 70%)' }}
+      />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 md:mb-20">
+        {/* Header */}
+        <div className="mb-12 md:mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-3 mb-5"
+          >
+            <div className="w-6 h-[1px] bg-[#22D3EE]" />
+            <span className="text-[#22D3EE] text-xs font-mono tracking-[0.25em] uppercase">Nasza Przewaga</span>
+          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white"
           >
             Dlaczego PRIZM.
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-[#86868b] max-w-2xl mx-auto tracking-tight"
-          >
-            Najnowocześniejsza szkoła jazdy w Warszawie.
-            Przełamujemy schematy, łącząc technologię z pasją do jazdy.
-          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -4, scale: 1.01 }}
-              className={`${feature.span} h-full`}
-            >
-              <SpotlightCard className="h-full p-8 flex flex-col justify-between group cursor-default transition-all hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)]">
-                <img src={feature.image} alt={feature.title} className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-0 mix-blend-luminosity" referrerPolicy="no-referrer" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-0 group-hover:bg-black/40 transition-colors duration-500"></div>
-                <div className="relative z-10">
-                  <div className="mb-6 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center bg-black/50 border border-white/10 backdrop-blur-md shadow-[0_0_15px_rgba(168,85,247,0.2)]">
-                    {feature.icon}
+        {/* Feature list */}
+        <div className="space-y-0">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative"
+              >
+                {/* Hover background */}
+                <div className="absolute inset-0 rounded-2xl bg-[#22D3EE]/0 group-hover:bg-[#22D3EE]/4 transition-colors duration-500 pointer-events-none" />
+
+                {/* Separator line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/5" />
+
+                <div className="grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_200px] gap-4 md:gap-8 items-center py-7 md:py-9 px-3 md:px-6">
+                  {/* Number */}
+                  <div className="flex items-center">
+                    <span className="font-mono text-4xl md:text-5xl font-bold text-white/8 group-hover:text-[#22D3EE]/20 transition-colors duration-500 select-none tabular-nums leading-none">
+                      {feature.num}
+                    </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4 tracking-tight">
-                    {feature.title}
-                  </h3>
+
+                  {/* Title + description */}
+                  <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
+                    <div className="flex items-center gap-4 min-w-[220px]">
+                      <div className="w-10 h-10 rounded-xl bg-[#22D3EE]/10 border border-[#22D3EE]/20 flex items-center justify-center shrink-0 group-hover:bg-[#22D3EE]/20 group-hover:border-[#22D3EE]/40 transition-all duration-500">
+                        <Icon className="w-5 h-5 text-[#22D3EE]" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white tracking-tight">
+                        {feature.title}
+                      </h3>
+                    </div>
+                    <p className="text-[#6B8CA4] text-sm md:text-base leading-relaxed max-w-xl group-hover:text-[#aaaaaa] transition-colors duration-500">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Tag */}
+                  <div className="hidden md:flex justify-end">
+                    <motion.span
+                      className="px-3 py-1 rounded-full border border-white/10 text-white/30 text-xs font-mono tracking-wide group-hover:border-[#22D3EE]/30 group-hover:text-[#22D3EE]/70 transition-all duration-500"
+                    >
+                      {feature.tag}
+                    </motion.span>
+                  </div>
                 </div>
-                <p className="text-[#86868b] text-sm md:text-base leading-relaxed relative z-10">
-                  {feature.description}
-                </p>
-              </SpotlightCard>
-            </motion.div>
-          ))}
+
+                {/* Animated left border on hover */}
+                <motion.div
+                  className="absolute left-0 top-0 bottom-0 w-[2px] rounded-full bg-[#22D3EE] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"
+                />
+              </motion.div>
+            );
+          })}
+          {/* Bottom separator */}
+          <div className="h-[1px] bg-white/5" />
         </div>
       </div>
     </section>

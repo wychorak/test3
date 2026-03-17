@@ -10,7 +10,7 @@ export function Theory() {
   };
 
   return (
-    <section id="theory" className="py-20 md:py-32 relative bg-[#1d1d1f] overflow-hidden border-y border-white/5">
+    <section id="theory" className="py-14 md:py-20 relative bg-[#040F1A] overflow-hidden border-y border-white/5">
       {/* Looping Marquee Animation */}
       <div className="absolute top-10 left-0 right-0 flex whitespace-nowrap opacity-[0.03] pointer-events-none overflow-hidden">
         <motion.div
@@ -56,44 +56,44 @@ export function Theory() {
           <h2 className="text-4xl md:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6">
             Teoria w Twoim tempie.
           </h2>
-          <p className="text-lg md:text-xl text-[#86868b] mb-8 md:mb-10 tracking-tight leading-relaxed">
+          <p className="text-lg md:text-xl text-[#6B8CA4] mb-8 md:mb-10 tracking-tight leading-relaxed">
             Przygotuj się do egzaminu państwowego z naszą autorską platformą e-learningową. 
             Wykłady wideo, interaktywne quizy i oficjalna baza pytań egzaminacyjnych PWPW.
           </p>
 
           <div className="space-y-6 mb-8 md:mb-10">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#a855f7]/10 flex items-center justify-center shrink-0">
-                <MonitorPlay className="w-6 h-6 text-[#a855f7]" />
+              <div className="w-12 h-12 rounded-full bg-[#22D3EE]/10 flex items-center justify-center shrink-0">
+                <MonitorPlay className="w-6 h-6 text-[#22D3EE]" />
               </div>
               <div>
                 <h4 className="text-white font-semibold">Wykłady Wideo</h4>
-                <p className="text-[#86868b] text-sm">Oglądaj na telefonie, tablecie lub komputerze.</p>
+                <p className="text-[#6B8CA4] text-sm">Oglądaj na telefonie, tablecie lub komputerze.</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#a855f7]/10 flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-6 h-6 text-[#a855f7]" />
+              <div className="w-12 h-12 rounded-full bg-[#22D3EE]/10 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-6 h-6 text-[#22D3EE]" />
               </div>
               <div>
                 <h4 className="text-white font-semibold">Oficjalne Testy</h4>
-                <p className="text-[#86868b] text-sm">100% pytań z bazy WORD.</p>
+                <p className="text-[#6B8CA4] text-sm">100% pytań z bazy WORD.</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#a855f7]/10 flex items-center justify-center shrink-0">
-                <FileText className="w-6 h-6 text-[#a855f7]" />
+              <div className="w-12 h-12 rounded-full bg-[#22D3EE]/10 flex items-center justify-center shrink-0">
+                <FileText className="w-6 h-6 text-[#22D3EE]" />
               </div>
               <div>
                 <h4 className="text-white font-semibold">Materiały PDF</h4>
-                <p className="text-[#86868b] text-sm">Pobierz skrypty i notatki do nauki offline.</p>
+                <p className="text-[#6B8CA4] text-sm">Pobierz skrypty i notatki do nauki offline.</p>
               </div>
             </div>
           </div>
 
           <button
             onClick={handlePurchase}
-            className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 text-base md:text-lg font-semibold text-white bg-[#a855f7] rounded-full hover:bg-[#7c3aed] transition-colors"
+            className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 text-base md:text-lg font-semibold text-white bg-[#22D3EE] rounded-full hover:bg-[#06B6D4] transition-colors"
           >
             Kup dostęp za 149 PLN
           </button>
@@ -106,7 +106,7 @@ export function Theory() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="flex-1 relative w-full"
         >
-          <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black">
+          <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-[#020B14]">
             <img 
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop" 
               alt="E-learning platform" 
@@ -118,7 +118,7 @@ export function Theory() {
                 onClick={handlePurchase}
                 className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 hover:scale-110 transition-transform group"
               >
-                <PlayCircle className="w-8 h-8 md:w-10 md:h-10 text-white group-hover:text-[#a855f7] transition-colors" />
+                <PlayCircle className="w-8 h-8 md:w-10 md:h-10 text-white group-hover:text-[#22D3EE] transition-colors" />
               </button>
             </div>
           </div>

@@ -6,7 +6,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-black pt-20 pb-10 overflow-hidden border-t border-white/10">
+    <footer className="relative bg-[#020B14] pt-20 pb-10 overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
@@ -16,21 +16,21 @@ export function Footer() {
                 PRIZM
               </span>
             </a>
-            <p className="text-[#86868b] max-w-sm mb-8 leading-relaxed">
+            <p className="text-[#6B8CA4] max-w-sm mb-8 leading-relaxed">
               The most advanced driving school in Warsaw.
               Pro driving. Redefined.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-[#1d1d1f] flex items-center justify-center text-[#86868b] hover:text-white hover:bg-[#424245] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-[#061220] flex items-center justify-center text-[#6B8CA4] hover:text-white hover:bg-[#424245] transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#1d1d1f] flex items-center justify-center text-[#86868b] hover:text-white hover:bg-[#424245] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-[#061220] flex items-center justify-center text-[#6B8CA4] hover:text-white hover:bg-[#424245] transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#1d1d1f] flex items-center justify-center text-[#86868b] hover:text-white hover:bg-[#424245] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-[#061220] flex items-center justify-center text-[#6B8CA4] hover:text-white hover:bg-[#424245] transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#1d1d1f] flex items-center justify-center text-[#86868b] hover:text-white hover:bg-[#424245] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-[#061220] flex items-center justify-center text-[#6B8CA4] hover:text-white hover:bg-[#424245] transition-colors">
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
@@ -40,17 +40,17 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-6">Menu</h4>
             <ul className="space-y-4">
-              <li><a href="#why" className="text-[#86868b] hover:text-white transition-colors">Why PRIZM</a></li>
-              <li><a href="#courses" className="text-[#86868b] hover:text-white transition-colors">Courses</a></li>
-              <li><a href="#instructors" className="text-[#86868b] hover:text-white transition-colors">Instructors</a></li>
-              <li><a href="#gallery" className="text-[#86868b] hover:text-white transition-colors">Gallery</a></li>
+              <li><a href="#why" className="text-[#6B8CA4] hover:text-white transition-colors">Why PRIZM</a></li>
+              <li><a href="#courses" className="text-[#6B8CA4] hover:text-white transition-colors">Courses</a></li>
+              <li><a href="#instructors" className="text-[#6B8CA4] hover:text-white transition-colors">Instructors</a></li>
+              <li><a href="#gallery" className="text-[#6B8CA4] hover:text-white transition-colors">Gallery</a></li>
             </ul>
           </div>
 
           {/* Hours */}
           <div>
             <h4 className="font-semibold text-white mb-6">Opening Hours</h4>
-            <ul className="space-y-4 text-[#86868b]">
+            <ul className="space-y-4 text-[#6B8CA4]">
               <li className="flex justify-between">
                 <span>Mon - Fri</span>
                 <span className="text-white">08:00 - 20:00</span>
@@ -61,7 +61,7 @@ export function Footer() {
               </li>
               <li className="flex justify-between">
                 <span>Sunday</span>
-                <span className="text-[#86868b]">Closed</span>
+                <span className="text-[#6B8CA4]">Closed</span>
               </li>
             </ul>
           </div>
@@ -69,12 +69,12 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#86868b] text-sm">
+          <p className="text-[#6B8CA4] text-sm">
             &copy; {new Date().getFullYear()} PRIZM DRIVE. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}
-            className="w-10 h-10 rounded-full bg-[#1d1d1f] flex items-center justify-center text-white hover:bg-[#424245] transition-colors group"
+            className="w-10 h-10 rounded-full bg-[#061220] flex items-center justify-center text-white hover:bg-[#424245] transition-colors group"
           >
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
           </button>

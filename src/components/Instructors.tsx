@@ -25,9 +25,9 @@ const instructors = [
 
 export function Instructors() {
   return (
-    <section id="instructors" className="py-20 md:py-32 relative bg-black">
+    <section id="instructors" className="py-14 md:py-20 relative bg-[#020B14]">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 md:mb-20">
+        <div className="text-center mb-10 md:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export function Instructors() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-[#86868b] max-w-2xl mx-auto tracking-tight"
+            className="text-lg md:text-xl text-[#6B8CA4] max-w-2xl mx-auto tracking-tight"
           >
             Ucz się od najlepszych. Nasi instruktorzy to pasjonaci i profesjonaliści.
           </motion.p>
@@ -70,7 +70,7 @@ export function Instructors() {
 
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl font-semibold text-white mb-1 tracking-tight">{instructor.name}</h3>
-                <p className="text-[#86868b] font-medium">{instructor.role}</p>
+                <p className="text-[#6B8CA4] font-medium">{instructor.role}</p>
               </div>
             </motion.div>
           ))}

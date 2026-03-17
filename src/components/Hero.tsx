@@ -1,120 +1,190 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { BlurText } from './reactbits/BlurText';
-import { ShinyText } from './reactbits/ShinyText';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+
+const STATS = [
+  { value: '98%', label: 'Zdawalność' },
+  { value: '10k+', label: 'Absolwentów' },
+  { value: '8 lat', label: 'Doświadczenia' },
+];
+
+const MARQUEE_ITEMS = [
+  'KAT. A', 'KAT. B', 'KAT. C', 'VR SYMULATOR', 'JAZDY NOCNE', 'PAKIET VIP',
+  'KAT. A', 'KAT. B', 'KAT. C', 'VR SYMULATOR', 'JAZDY NOCNE', 'PAKIET VIP',
+];
 
 export function Hero() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleScrollTo = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="hero" ref={ref} className="relative h-screen w-full overflow-hidden bg-[#050505] flex items-center justify-center">
-      {/* Background Image with Scroll Parallax */}
-      <motion.div 
-        style={{ y, scale }}
-        className="absolute inset-0 z-0"
-      >
+    <section
+      id="hero"
+      className="relative min-h-screen w-full overflow-hidden bg-[#020B14] flex flex-col"
+    >
+      {/* Background: car image, very subtle */}
+      <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=2000&auto=format&fit=crop"
-          alt="Sports Car Tokyo"
-          className="w-full h-full object-cover opacity-60"
-          referrerPolicy="no-referrer"
+          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2000&auto=format&fit=crop"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.12]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/90 via-[#a855f7]/20 to-[#050505]"></div>
-        
-        {/* Subtle Grid Overlay */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30 mix-blend-overlay"></div>
-      </motion.div>
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, #020B14 0%, rgba(2,11,20,0.6) 40%, rgba(2,11,20,0.8) 70%, #020B14 100%)' }} />
+      </div>
 
-      {/* Decorative Vertical Text (Asian Aesthetic) */}
-      <motion.div 
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.5, delay: 1 }}
-        className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-6 z-20"
-      >
-        <div className="w-[1px] h-24 bg-gradient-to-b from-transparent to-[#a855f7]/50"></div>
-        <span className="text-[#a855f7] font-mono text-sm tracking-[0.3em]" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>
-          自動車学校
-        </span>
-        <span className="text-white/50 font-mono text-xs tracking-[0.3em]" style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}>
-          TOKYO DRIFT
-        </span>
-        <div className="w-[1px] h-24 bg-gradient-to-t from-transparent to-[#a855f7]/50"></div>
-      </motion.div>
+      {/* Animated scan line */}
+      <motion.div
+        className="absolute left-0 right-0 h-[1px] pointer-events-none z-0"
+        style={{ background: 'linear-gradient(to right, transparent, rgba(34,211,238,0.18), transparent)' }}
+        animate={{ top: ['0%', '100%'] }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
+      />
 
-      {/* Overlay Content */}
-      <motion.div 
-        style={{ opacity, y: textY }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center text-center mt-20"
-      >
-        <BlurText 
-          text="PRIZM" 
-          delay={0.1}
-          className="font-display font-bold text-7xl md:text-[12rem] leading-none tracking-tighter text-white mb-2 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]"
-        />
-        
+      {/* Glow orbs */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(ellipse, rgba(34,211,238,0.07) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%)' }} />
+
+      {/* Subtle horizontal grid lines */}
+      {[20, 40, 60, 80].map((y) => (
+        <div key={y} className="absolute left-0 right-0 h-[1px] pointer-events-none z-0"
+          style={{ top: `${y}%`, background: 'rgba(34,211,238,0.03)' }} />
+      ))}
+
+      {/* ── MAIN content — centred ── */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-5 sm:px-8 pt-24 pb-6">
+
+        {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mb-8 flex items-center gap-3"
         >
-          <ShinyText 
-            text="NOWY WYMIAR JAZDY" 
-            speed={3} 
-            className="text-xl md:text-2xl font-medium tracking-[0.3em] uppercase text-white drop-shadow-md"
-          />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#22D3EE]/20 bg-[#22D3EE]/5 text-[#22D3EE] font-mono text-[11px] tracking-[0.25em] uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#22D3EE] animate-pulse" />
+            Szkoła Jazdy · Warszawa · Est. 2016
+          </span>
         </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
-        >
-          <a
-            href="#book"
-            onClick={(e) => handleScrollTo(e, '#book')}
-            className="group relative px-10 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-transform hover:scale-105 shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+
+        {/* Headline — two lines */}
+        <div className="overflow-hidden mb-1">
+          <motion.h1
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] }}
+            className="font-display font-black leading-[0.88] tracking-tighter text-white"
+            style={{ fontSize: 'clamp(3.8rem, 13vw, 10rem)' }}
           >
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-white tracking-wide">ROZPOCZNIJ KURS</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#a855f7] to-[#ec4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </a>
-          <a
-            href="#courses"
-            onClick={(e) => handleScrollTo(e, '#courses')}
-            className="px-10 py-4 rounded-full bg-black/40 border border-[#a855f7]/30 text-white font-medium text-lg hover:bg-[#a855f7]/20 hover:border-[#a855f7] transition-all duration-300 backdrop-blur-md tracking-wide"
+            NOWY
+          </motion.h1>
+        </div>
+        <div className="overflow-hidden mb-8">
+          <motion.h1
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.9, delay: 0.48, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] }}
+            className="font-display font-black leading-[0.88] tracking-tighter"
+            style={{
+              fontSize: 'clamp(3.8rem, 13vw, 10rem)',
+              background: 'linear-gradient(90deg, #22D3EE 0%, #67E8F9 50%, #F59E0B 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            WYMIAR.
+          </motion.h1>
+        </div>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.65 }}
+          className="text-[#6B8CA4] text-base sm:text-lg max-w-md mx-auto leading-relaxed mb-10"
+        >
+          Najbardziej zaawansowana szkoła jazdy w Warszawie. Technologia VR, egzaminy na miejscu i instruktorzy z pasją.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 w-full"
+        >
+          <button
+            onClick={() => handleScrollTo('#book')}
+            className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-sm text-[#020B14] transition-all hover:scale-105 shadow-[0_0_35px_rgba(34,211,238,0.25)]"
+            style={{ background: 'linear-gradient(135deg, #22D3EE, #06B6D4)' }}
+          >
+            ROZPOCZNIJ KURS
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+          <button
+            onClick={() => handleScrollTo('#courses')}
+            className="flex items-center justify-center w-full sm:w-auto px-8 py-4 rounded-full font-medium text-sm text-[#6B8CA4] border border-white/10 hover:border-[#22D3EE]/40 hover:text-[#22D3EE] transition-all"
           >
             Odkryj ofertę
-          </a>
+          </button>
         </motion.div>
-      </motion.div>
-      
-      <motion.div 
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="flex items-center justify-center gap-6 sm:gap-12"
+        >
+          {STATS.map((s, i) => (
+            <div key={i} className={`flex flex-col items-center gap-1 ${i > 0 ? 'pl-6 sm:pl-12 border-l border-white/8' : ''}`}>
+              <span className="text-xl sm:text-3xl font-bold text-white tracking-tight">{s.value}</span>
+              <span className="text-[9px] sm:text-[10px] text-[#6B8CA4] uppercase tracking-[0.15em]">{s.label}</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        transition={{ delay: 1.6, duration: 1 }}
+        className="relative z-10 flex flex-col items-center pb-6 gap-2"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-[#a855f7]">Scroll</span>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-[#a855f7] to-transparent"></div>
+        <motion.div
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex flex-col items-center gap-2"
+        >
+          <span className="text-[9px] uppercase tracking-[0.3em] text-[#22D3EE]/50 font-mono">Scroll</span>
+          <div className="w-[1px] h-10 bg-gradient-to-b from-[#22D3EE]/40 to-transparent" />
+        </motion.div>
+      </motion.div>
+
+      {/* ── Bottom marquee strip ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="relative z-10 overflow-hidden py-3 flex border-t border-white/5 shrink-0"
+        style={{ background: 'rgba(34,211,238,0.03)' }}
+      >
+        <motion.div
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+          className="flex gap-10 whitespace-nowrap"
+        >
+          {MARQUEE_ITEMS.map((item, i) => (
+            <span key={i} className="flex items-center gap-10">
+              <span className="text-[#6B8CA4] font-mono text-xs tracking-[0.2em]">{item}</span>
+              <span className="text-[#22D3EE]/25 text-xs">·</span>
+            </span>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );
