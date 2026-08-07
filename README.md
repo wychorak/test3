@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# PRIZM Driving School — website concept
 
-# Run and deploy your AI Studio app
+> Status: working fictional portfolio demo. [View the live site](https://wychorak.github.io/prizm-driving-school/).
 
-This contains everything you need to run your app locally.
+A high-energy Y2K-inspired website concept for a Warsaw driving school. Business details, instructors, pass-rate claims and booking flows are fictional and included only to demonstrate design and front-end engineering.
 
-View your app in AI Studio: https://ai.studio/apps/c6e7f3a3-8fb6-4c9a-a79c-979f06806b66
+## Highlights
 
-## Run Locally
+- responsive course and instructor presentation
+- interactive booking and lesson-selection UI
+- animated gallery, custom cursor and glass effects
+- mobile navigation and contact form states
+- clear demo messaging for disabled payments
 
-**Prerequisites:**  Node.js
+## Stack
 
+React 19, TypeScript, Vite, Tailwind CSS, Motion, GSAP, Three.js and React Three Fiber.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Run locally
+
+```bash
+npm ci
+npm run dev
+```
+
+## Verification
+
+`npm run lint` and `npm run build` pass on the current source. The demo does not process payments or create real driving-course bookings.
